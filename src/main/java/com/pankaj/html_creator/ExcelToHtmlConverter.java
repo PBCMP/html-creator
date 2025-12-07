@@ -55,9 +55,9 @@ public class ExcelToHtmlConverter {
                 String designation = getCellValueAsString(row.getCell(2), evaluator);
                 String id = getCellValueAsString(row.getCell(3),evaluator); //vtc
                 String authorization = getCellValueAsString(row.getCell(4), evaluator);
-                String fromA = getCellValueAsString(row.getCell(5), evaluator); //form A
-                String ime = getCellValueAsString(row.getCell(6), evaluator); //IME
-                String dob = getCellValueAsString(row.getCell(7), evaluator); //PME
+                String fromA = getCellValueAsString(row.getCell(5), evaluator).substring(1); //NUMBER
+                String ime = getCellValueAsString(row.getCell(6), evaluator).substring(1); //NUMBER
+                String dob = getCellValueAsString(row.getCell(7), evaluator); //
                 String doj = getCellValueAsString(row.getCell(8), evaluator); //SOP SL NO
                 String sop = getCellValueAsString(row.getCell(9), evaluator);
                 String vtc = getCellValueAsString(row.getCell(10), evaluator);
@@ -66,7 +66,7 @@ public class ExcelToHtmlConverter {
 
                 // String imageName = getCellValueAsString(row.getCell(21), evaluator).replace(" ","");
 
-                String fileName = id + ".html";  // Append ".html" to the id for the file name
+                String fileName = designation + ".html";  // Append ".html" to the id for the file name
 
                 people.add(new GenericClass(imageName,fileName,name,id,designation,authorization,fromA,ime,dob,doj,sop,vtc));
             }
